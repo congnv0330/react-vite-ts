@@ -80,6 +80,7 @@ module.exports = {
     ],
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'warn',
+
     // http://eslint.org/docs/rules/
     'array-callback-return': 'warn',
     'dot-location': ['warn', 'property'],
@@ -186,11 +187,13 @@ module.exports = {
       },
     ],
     'getter-return': 'warn',
+
     // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
     'import/first': 'error',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'warn',
     'import/no-webpack-loader-syntax': 'error',
+
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
     'react/forbid-foreign-prop-types': [
       'warn',
@@ -219,6 +222,7 @@ module.exports = {
     'react/no-typos': 'error',
     'react/require-render-return': 'error',
     'react/style-prop-object': 'warn',
+
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
     'jsx-a11y/alt-text': 'warn',
     'jsx-a11y/anchor-has-content': 'warn',
