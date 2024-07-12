@@ -19,7 +19,7 @@ export default tsEslint.config({
     eslintPrettier,
   ],
 
-  files: ['**/*.ts', '**/*.tsx', '.prettierrc.js', 'eslint.config.js'],
+  files: ['src/**/*.ts', 'src/**/*.tsx', '*.config.js', '*.config.ts'],
 
   linterOptions: {
     reportUnusedDisableDirectives: 'error',
