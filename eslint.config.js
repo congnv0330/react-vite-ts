@@ -47,7 +47,11 @@ export default tsEslint.config({
   },
 
   rules: {
+    // Typescript
     '@typescript-eslint/no-explicit-any': 'off',
+
+    // eslint-plugin-react
+    'react/display-name': 'off',
 
     // eslint-plugin-react-hooks
     ...reactHooks.configs.recommended.rules,
