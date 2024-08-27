@@ -1,6 +1,4 @@
-import { fixupPluginRules } from '@eslint/compat';
 import js from '@eslint/js';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import reactConfigJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import reactConfigRecommended from 'eslint-plugin-react/configs/recommended.js';
@@ -15,7 +13,6 @@ export default tsEslint.config({
     ...tsEslint.configs.recommended,
     reactConfigRecommended,
     reactConfigJsxRuntime,
-    jsxA11y.flatConfigs.recommended,
     eslintPrettier,
   ],
 
@@ -27,7 +24,7 @@ export default tsEslint.config({
 
   plugins: {
     'simple-import-sort': simpleImportSortPlugin,
-    'react-hooks': fixupPluginRules(reactHooks),
+    'react-hooks': reactHooks,
   },
 
   languageOptions: {
