@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "analyze": "tsc && cross-env ANALYZE=true vite build",
+    "build": "tsc -b && vite build",
+    "analyze": "cross-env ANALYZE=true vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview"
