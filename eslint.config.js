@@ -46,9 +46,11 @@ export default tsEslint.config({
   rules: {
     // Typescript
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-empty-object-type': 'off',
 
     // eslint-plugin-react
     'react/display-name': 'off',
+    'react/prop-types': 'off',
 
     // eslint-plugin-react-hooks
     ...reactHooksPlugin.configs.recommended.rules,
