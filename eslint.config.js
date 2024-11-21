@@ -1,7 +1,6 @@
 import js from '@eslint/js';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
-import reactConfigJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import reactConfigRecommended from 'eslint-plugin-react/configs/recommended.js';
+import react from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
@@ -13,9 +12,9 @@ export default tsEslint.config(
     extends: [
       js.configs.recommended,
       ...tsEslint.configs.recommended,
-      reactConfigRecommended,
-      reactConfigJsxRuntime,
       eslintPrettier,
+      react.configs.flat.recommended,
+      react.configs.flat['jsx-runtime'],
     ],
 
     files: ['src/**/*.ts', 'src/**/*.tsx', '*.config.js', '*.config.ts'],
@@ -25,8 +24,8 @@ export default tsEslint.config(
     },
 
     plugins: {
-      'simple-import-sort': simpleImportSortPlugin,
       'react-hooks': reactHooksPlugin,
+      'simple-import-sort': simpleImportSortPlugin,
     },
 
     languageOptions: {
