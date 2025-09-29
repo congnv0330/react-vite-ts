@@ -1,18 +1,22 @@
 import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
-export default tsEslint.config(
-  { ignores: ['dist'] },
+export default defineConfig(
+  {
+    ignores: ['dist'],
+  },
+  js.configs.recommended,
+  tsEslint.configs.recommended,
+  reactHooks.configs['recommended-latest'],
+  eslintPrettier,
   {
     extends: [
-      js.configs.recommended,
-      ...tsEslint.configs.recommended,
-      eslintPrettier,
       react.configs.flat.recommended,
       react.configs.flat['jsx-runtime'],
     ],
@@ -24,7 +28,6 @@ export default tsEslint.config(
     },
 
     plugins: {
-      'react-hooks': reactHooksPlugin,
       'simple-import-sort': simpleImportSortPlugin,
     },
 
@@ -32,8 +35,6 @@ export default tsEslint.config(
       globals: {
         ...globals.browser,
       },
-
-      ecmaVersion: 2020,
 
       sourceType: 'module',
     },
@@ -48,13 +49,6 @@ export default tsEslint.config(
       // Typescript
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
-
-      // eslint-plugin-react
-      'react/display-name': 'off',
-      'react/prop-types': 'off',
-
-      // eslint-plugin-react-hooks
-      ...reactHooksPlugin.configs.recommended.rules,
 
       // simple-import-sort
       'simple-import-sort/exports': 'error',
