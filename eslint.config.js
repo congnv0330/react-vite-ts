@@ -13,22 +13,22 @@ export default defineConfig(
   },
   js.configs.recommended,
   tsEslint.configs.recommended,
-  reactHooks.configs['recommended-latest'],
+  reactHooks.configs.flat.recommended,
   eslintPrettier,
   {
+    files: ['src/**/*.ts', 'src/**/*.tsx', '*.config.js', '*.config.ts'],
+
+    plugins: {
+      'simple-import-sort': simpleImportSortPlugin,
+    },
+
     extends: [
       react.configs.flat.recommended,
       react.configs.flat['jsx-runtime'],
     ],
 
-    files: ['src/**/*.ts', 'src/**/*.tsx', '*.config.js', '*.config.ts'],
-
     linterOptions: {
       reportUnusedDisableDirectives: 'error',
-    },
-
-    plugins: {
-      'simple-import-sort': simpleImportSortPlugin,
     },
 
     languageOptions: {
