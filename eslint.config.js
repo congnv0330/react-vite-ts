@@ -1,5 +1,5 @@
 import js from '@eslint/js';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -8,9 +8,7 @@ import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 export default defineConfig(
-  {
-    ignores: ['dist'],
-  },
+  globalIgnores(['dist']),
   js.configs.recommended,
   tsEslint.configs.recommended,
   reactHooks.configs.flat.recommended,
@@ -32,10 +30,7 @@ export default defineConfig(
     },
 
     languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
-
+      globals: globals.browser,
       sourceType: 'module',
     },
 
