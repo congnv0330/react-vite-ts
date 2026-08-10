@@ -26,7 +26,6 @@
     "verbatimModuleSyntax": true,
 
     /* Path */
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
